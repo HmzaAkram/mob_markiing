@@ -4,7 +4,7 @@ import React from "react";
 import { useWishlist } from "../Components/WishlistContext";
 
 const WishlistComponent: React.FC = () => {
-  const { wishlistItems, removeFromWishlist, clearWishlist } = useWishlist();
+  const { wishlistItems, removeFromWishlist, clearWishlist } = t();
 
   return (
     <div className="wishlist-container p-4">
