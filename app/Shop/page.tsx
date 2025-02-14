@@ -2,18 +2,8 @@
 import React, { useEffect, useState } from "react";
 import ProductList from "../Components/ProductList";
 
-// Define Product Type
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  brand: string;
-  stock: number;
-  image: string;
-}
-
 const Shop: React.FC = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,17 +16,16 @@ const Shop: React.FC = () => {
           throw new Error("Failed to fetch products");
         }
 
-        const data: Product[] = await response.json();
+        const data = await response.json();
 
         if (!Array.isArray(data)) {
           throw new Error("Invalid data format received");
         }
 
         setProducts(data);
-      } catch (err: unknown) {
-        const message = err instanceof Error ? err.message : "Unknown error occurred";
-        console.error("Error loading products:", message);
-        setError(message);
+      } catch (error: any) {
+        console.error("Error loading products:", error.message);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
