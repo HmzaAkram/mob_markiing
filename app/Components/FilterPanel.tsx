@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 
-interface FilterPanelProps {
-  products: any[]; // Define your product type here
-  setFilteredProducts: React.Dispatch<React.SetStateAction<any[]>>;
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  brand: string;
+  stock: number;
 }
+
+interface FilterPanelProps {
+  products: Product[];
+  setFilteredProducts: React.Dispatch<React.SetStateAction<Product[]>>;
+}
+
 
 const FilterPanel: React.FC<FilterPanelProps> = ({ products, setFilteredProducts }) => {
   const [priceRange, setPriceRange] = useState([0, 100]); // Price range [min, max]

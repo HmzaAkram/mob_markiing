@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation"; // ✅ Import useRouter
 import React, { useState, useEffect } from "react";
 import { useCart } from "../Components/CartContext";
+import Image from "next/image";
 
 const CartComponent: React.FC = () => {
   const router = useRouter(); // ✅ Initialize router
@@ -37,7 +38,7 @@ const CartComponent: React.FC = () => {
                 className="cart-item flex justify-between items-center border-b pb-2"
               >
                 <div className="flex items-center">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
                     className="w-16 h-16 object-cover mr-4"

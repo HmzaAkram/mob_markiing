@@ -7,11 +7,7 @@ import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { useCart } from "../Components/CartContext";
 import { useWishlist } from "../Components/WishlistContext";
 
-interface NavScrollExampleProps {
-  setFilteredProducts: React.Dispatch<React.SetStateAction<any[]>>;
-}
-
-export default function NavScrollExample({ setFilteredProducts }: NavScrollExampleProps) {
+export default function Header() {
   const [expanded, setExpanded] = useState(false);
   const { cartItems } = useCart(); 
   const { wishlistItems } = useWishlist(); 
@@ -50,7 +46,7 @@ export default function NavScrollExample({ setFilteredProducts }: NavScrollExamp
             )}
           </Link>
 
-          {/* Cart Icon with Badge (Redirect to Cart Page) */}
+          {/* Cart Icon with Badge */}
           <Link href="/Cart" className="relative cursor-pointer ml-4">
             <FaShoppingCart size={24} />
             {cartItems.length > 0 && (

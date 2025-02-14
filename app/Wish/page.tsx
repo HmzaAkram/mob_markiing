@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useWishlist } from "../Components/WishlistContext";
+import Image from "next/image";
 
 const WishlistComponent: React.FC = () => {
   const { wishlistItems, removeFromWishlist, clearWishlist } = useWishlist();
@@ -19,7 +20,7 @@ const WishlistComponent: React.FC = () => {
                 className="wishlist-item flex justify-between items-center border-b pb-2"
               >
                 <div className="flex items-center">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
                     className="w-16 h-16 object-cover mr-4 rounded-lg"
