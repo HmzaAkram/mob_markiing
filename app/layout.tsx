@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <CartProvider>
           <WishlistProvider>
-            <NavScrollExample setFilteredProducts={setFilteredProducts} />
+            <NavScrollExample ={setFilteredProducts} />
             <main className="container mx-auto p-4">{children}</main>
           </WishlistProvider>
         </CartProvider>
