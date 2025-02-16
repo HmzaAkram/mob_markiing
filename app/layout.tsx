@@ -8,7 +8,7 @@ import products from "./Components/data";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [setfilteredProducts, setFilteredProducts] = useState(products);
 
   return (
     <html lang="en">
